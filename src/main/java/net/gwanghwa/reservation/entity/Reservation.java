@@ -2,8 +2,6 @@ package net.gwanghwa.reservation.entity;
 
 import java.time.LocalDateTime;
 
-import org.hibernate.annotations.ManyToAny;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -41,7 +39,7 @@ public class Reservation {
     /**
      * 예약한 회원 정보
      */
-    @ManyToAny
+    @ManyToOne
     @JoinColumn(name = "member_id")
     private Member member;
 

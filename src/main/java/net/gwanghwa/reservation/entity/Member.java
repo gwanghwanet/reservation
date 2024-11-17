@@ -1,11 +1,14 @@
 package net.gwanghwa.reservation.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import net.gwanghwa.reservation.type.Role;
 
 /**
@@ -44,6 +47,9 @@ public class Member {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @OneToMany(mappedBy = "member")
+    private List<Reservation> reservations;  // 여러 Reservation을 가질 수 있음
+    
     /**
      * @return the id
      */

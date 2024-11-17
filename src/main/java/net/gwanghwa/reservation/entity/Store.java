@@ -1,12 +1,11 @@
 package net.gwanghwa.reservation.entity;
 
-import org.hibernate.annotations.ManyToAny;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 /**
 * @packageName   : net.gwanghwa.reservation.vo
@@ -43,7 +42,7 @@ public class Store {
     /**
      * 매장 소유자 (점장)
      */
-    @ManyToAny //
+    @ManyToOne
     @JoinColumn(name = "owner_id")
     private Member owner;
 
