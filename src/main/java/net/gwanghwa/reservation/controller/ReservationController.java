@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.gwanghwa.reservation.entity.Reservation;
@@ -74,9 +73,9 @@ public class ReservationController {
      * @return 도착 확인 후 상태가 업데이트된 예약 객체
      */
     @PutMapping("/checkin/{reservationId}")
-    public Reservation checkInReservation(@PathVariable Long reservationId, @RequestParam("currentTime") String currentTime) {
+    public Reservation checkInReservation(@PathVariable Long reservationId) {
         // String을 LocalDateTime으로 변환
-        LocalDateTime checkInTime = LocalDateTime.parse(currentTime);
+        LocalDateTime checkInTime = LocalDateTime.now();
         return reservationService.checkInReservation(reservationId, checkInTime);
     }
 }

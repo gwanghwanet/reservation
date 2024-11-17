@@ -35,7 +35,9 @@ public class ReviewController {
      * @return 작성된 리뷰 객체
      */
     @PostMapping("/write")
-    public Review writeReview(@RequestParam Long reservationId, @RequestParam String content, @RequestParam int rating) {
+    public Review writeReview(@RequestParam(value="reservationId") Long reservationId,
+                              @RequestParam(value="content") String content,
+                              @RequestParam(value="rating") int rating) {
         return reviewService.writeReview(reservationId, content, rating);
     }
 
@@ -57,7 +59,9 @@ public class ReviewController {
      * @return 수정된 리뷰 객체
      */
     @PutMapping("/{reviewId}")
-    public Review updateReview(@PathVariable Long reviewId, @RequestParam String content, @RequestParam int rating) {
+    public Review updateReview(@PathVariable Long reviewId,
+            @RequestParam(value="content") String content,
+            @RequestParam(value="rating") int rating) {
         return reviewService.updateReview(reviewId, content, rating);
     }
 
