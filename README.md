@@ -15,9 +15,7 @@
 - Java 17
 - Spring Boot: 백엔드 프레임워크
 - Spring Data JPA: 데이터베이스 처리
-- Spring Security: 사용자 인증 및 권한 관리
 - MySQL: 관계형 데이터베이스
-- BCryptPasswordEncoder: 비밀번호 암호화
 
 ## 설치 방법
 ### 1. 클론 후 의존성 설치
